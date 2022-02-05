@@ -1,3 +1,0 @@
-eksctl create cluster \
- --name kolizo-cluster \
- --without-nodegroup

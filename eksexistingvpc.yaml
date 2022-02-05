@@ -4,8 +4,8 @@ apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
 metadata:
-  name: kolizo-cluster 
-  region: us-west-2
+  name: kolizo-cluster #(Please change out)
+  region: us-west-2  #(Please change out)
 
 iam:
   withOIDC: true
@@ -16,21 +16,21 @@ vpc:
     # must provide 'private' and/or 'public' subnets by availibility zone as shown
     public:
       us-west-2d:
-        id: "subnet-048ce2d5514e2618a"
+        id: "subnet-048ce2d5514e2618a" #(Please change out)
         cidr: "172.31.48.0/20" # (optional, must match CIDR used by the given subnet)
 
       us-west-2c:
-        id: "subnet-0313eeeb3bd16d618"
+        id: "subnet-0313eeeb3bd16d618" #(Please change out)
         cidr: "172.31.0.0/20"  # (optional, must match CIDR used by the given subnet)
 
       us-west-2a:
-        id: "subnet-01509dd013ef4da15"
+        id: "subnet-01509dd013ef4da15" #(Please change out)
         cidr: "172.31.16.0/20"   # (optional, must match CIDR used by the given subnet)
 
 nodeGroups:
-  - name: kolizo-mangegroup
-    instanceType: t2.medium
-    desiredCapacity: 3
+  - name: kolizo-mangegroup #(Please change out)
+    instanceType: t2.medium #(Please change out)
+    desiredCapacity: 3   #(Please change out)
     ssh:
-      publicKeyName: webapp
+      publicKeyName: webapp  #(Please change out)
     privateNetworking: false # if only 'Private' subnets are given, this must be enabled
