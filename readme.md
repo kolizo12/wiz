@@ -12,20 +12,16 @@ aws ec2 authorize-security-group-ingress \
     --protocol tcp \
     --port 28017
 ```
+```
 aws ec2 authorize-security-group-ingress --group-id sg-xxxxxxx  --source-group database --group-owner  609xxxxxxx --protocol all --port all
 ```
-<<<<<<< HEAD
-
-=======
-===
->>>>>>> 5df8769 (updated the readme.md)
 #create a key pair and download this into your computer to be used to access the ec2 resources
-```
 #create the ekscluster in public subnet using the script eksexistingvpc.yaml
 #replace every value mark with xxx with your appropriate value
 
 ```
 eksctl create cluster -f eksexistingvpc.yaml
+```
 ===
 Create a mongod instance with an attache profile that give it access to all ec2 role 
 ```
@@ -35,27 +31,34 @@ aws ec2 associate-iam-instance-profile --instance-id i-070afd4037ac924cf --iam-i
 ```
 ===
 Create the volumes to be consumed by the mongod instance 
-
+```
 for x in {1..4}; do
 aws ec2 create-volume --size 4 --availability-zone us-west-2c;
 done > vols.txt
+```
 ===
+```
 aws ec2 attach-volume --volume-id vol-xxxxxxxxxxxxx --instance-id i-xxxxxxxx --device /dev/sdj
 aws ec2 attach-volume --volume-id vol-xxxxxxxxxxxxx --instance-id i-xxxxxxxx --device /dev/sdk
 aws ec2 attach-volume --volume-id vol-xxxxxxxxxxxxx --instance-id i-xxxxxxxx --device /dev/sdl
 aws ec2 attach-volume --volume-id vol-xxxxxxxxxxxxx --instance-id i-xxxxxxxx -- device /dev/sdm
+```
 ==
 #prepare the insance for monogod installation
 ===
+```
 sudo mdadm --verbose --create /dev/md0 --level=10 --chunk=256 --raid-devices=4 /dev/sdj /dev/sdk /dev/sdl /dev/sdm
 echo ’DEVICE /dev/sdj /dev/sdk /dev/sdl /dev/sdm’ | sudo tee -a /etc/mdadm.conf
 sudo mdadm --detail --scan | sudo tee -a /etc/mdadm.conf
+```
 ===
+```
 sudo blockdev --setra 128 /dev/md0
 sudo blockdev --setra 128 /dev/sdj
 sudo blockdev --setra 128 /dev/sdk
 sudo blockdev --setra 128 /dev/sdl
 sudo blockdev --setra 128 /dev/sdm
+```
 ====
 sudo dd if=/dev/zero of=/dev/md0 bs=512 count=1
 sudo pvcreate /dev/md0
