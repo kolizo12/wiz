@@ -6,12 +6,12 @@ aws ec2 create-security-group --group-name database --description "security grou
     --protocol tcp \
     --port 22 \
     --cidr 0.0.0.0/0
-===
+---
 aws ec2 authorize-security-group-ingress \
     --group-id sg-xxxxxxx \
     --protocol tcp \
     --port 28017
-===
+---
 aws ec2 authorize-security-group-ingress --group-id sg-xxxxxxx  --source-group database --group-owner  609xxxxxxx --protocol all --port all
 ===
 
