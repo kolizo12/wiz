@@ -14,18 +14,25 @@ aws ec2 authorize-security-group-ingress \
 ```
 aws ec2 authorize-security-group-ingress --group-id sg-xxxxxxx  --source-group database --group-owner  609xxxxxxx --protocol all --port all
 ```
+<<<<<<< HEAD
 
-#create a key pair and download this into your computer to be used to access the ec2 resources
+=======
 ===
+>>>>>>> 5df8769 (updated the readme.md)
+#create a key pair and download this into your computer to be used to access the ec2 resources
+```
 #create the ekscluster in public subnet using the script eksexistingvpc.yaml
 #replace every value mark with xxx with your appropriate value
+
+```
 eksctl create cluster -f eksexistingvpc.yaml
 ===
 Create a mongod instance with an attache profile that give it access to all ec2 role 
-
+```
 aws ec2 run-instances --image-id ami-06cffe063efe892ad --instance-type t2.micro --key-name webapp --security-groups  database --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=Mongodb}]' 
 
 aws ec2 associate-iam-instance-profile --instance-id i-070afd4037ac924cf --iam-instance-profile Name=ec2instance
+```
 ===
 Create the volumes to be consumed by the mongod instance 
 
