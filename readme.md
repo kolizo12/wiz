@@ -111,11 +111,11 @@ gpgcheck=1
 enabled=1
 gpgkey=https://www.mongodb.org/static/pgp/server-4.2.asc
 ```
-===
 ```
 sudo yum install -y mongodb-org
 ```
 ===
+
 change permissions
 ==
 ```
@@ -124,6 +124,7 @@ sudo chown mongod:mongod /log
 sudo chown mongod:mongod /journal
 ```
 ===
+
 edit the /etc/mongod.conf
 ====
 
