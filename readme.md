@@ -44,8 +44,10 @@ aws ec2 attach-volume --volume-id vol-xxxxxxxxxxxxx --instance-id i-xxxxxxxx --d
 aws ec2 attach-volume --volume-id vol-xxxxxxxxxxxxx --instance-id i-xxxxxxxx --device /dev/sdl
 aws ec2 attach-volume --volume-id vol-xxxxxxxxxxxxx --instance-id i-xxxxxxxx -- device /dev/sdm
 ```
-==
+===
+
 #prepare the insance for monogod installation
+
 ===
 ```
 sudo mdadm --verbose --create /dev/md0 --level=10 --chunk=256 --raid-devices=4 /dev/sdj /dev/sdk /dev/sdl /dev/sdm
