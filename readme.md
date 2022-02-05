@@ -11,9 +11,9 @@ aws ec2 authorize-security-group-ingress \
     --group-id sg-xxxxxxx \
     --protocol tcp \
     --port 28017
-xxx
+```
 aws ec2 authorize-security-group-ingress --group-id sg-xxxxxxx  --source-group database --group-owner  609xxxxxxx --protocol all --port all
-xxx
+```
 
 #create a key pair and download this into your computer to be used to access the ec2 resources
 ===
