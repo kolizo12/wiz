@@ -121,8 +121,9 @@ sudo chown mongod:mongod /data
 sudo chown mongod:mongod /log
 sudo chown mongod:mongod /journal
 ```
-===
-edit the /etc/mongod.conf
+---
+
+Edit the /etc/mongod.conf
 ====
 path:
   /log/mongod.log
