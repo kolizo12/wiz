@@ -1,5 +1,7 @@
 #create the security group and then use the secrity group as part of the security group rules
+```
 aws ec2 create-security-group --group-name database --description "security group for database"
+```
 ```
  aws ec2 authorize-security-group-ingress \
     --group-id sg-xxxxxxx \
