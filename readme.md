@@ -24,7 +24,7 @@ use this command to check where the serviceaccount is mounted after logging into
 mount | grep serv
 ```
 ```
-curl -X GET https://kubernetes:443/api/v1/namespaces/default/pods/ --header "Authorization: Bearer xxxxxxxxxxxe" --cacert /run/secrets/kubernetes.io/serviceaccount/ca.crt
+curl -X GET https://kubernetes:443/api/v1/namespaces/default/pods/ --header "Authorization: Bearer xxxxxxxxxxxe" --cacert /run/secrets/kubernetes.io/serviceaccount/ca.crt | jq -rM '.items[].metadata.name'
 ```
 #then apply the permissive access This gives all SA admin privis 
 ```
@@ -42,7 +42,7 @@ k auth can-i delete secrets --as system:serviceaccount:default:build-robot
 #deploy the confimap configmap.yaml
 #log into the pod and get pod info using this command
 ```
-curl -X GET https://kubernetes:443/api/v1/namespaces/default/pods/ --header "Authorization: Bearer xxxxxxxxxxxe" --cacert /run/secrets/kubernetes.io/serviceaccount/ca.crt
+curl -X GET https://kubernetes:443/api/v1/namespaces/default/pods/ --header "Authorization: Bearer xxxxxxxxxxxe" --cacert /run/secrets/kubernetes.io/serviceaccount/ca.crt | jq -rM '.items[].metadata.name'
 ```
 
 #deploy the loadbalancer loadbalancer.yaml
