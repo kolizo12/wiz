@@ -129,9 +129,12 @@ sudo chown mongod:mongod /journal
 
 edit the /etc/mongod.conf
 ====
-path: /log/mongod.log
+path:
+  /log/mongod.log
+
 storage:
   dbPath: /data
+
 net:
   port: 27017
   bindIp: 0.0.0.0
