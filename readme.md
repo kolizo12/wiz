@@ -6,7 +6,7 @@ K8S
 ```
 eksctl create cluster -f eksexistingvpc.yaml
 ```
-
+Deploy k8s resources
 # create the SA using sa.yml
 #deploy the confimap configmap.yaml
 #deploy the nginx application nginx-deployment.yaml
