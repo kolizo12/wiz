@@ -47,4 +47,7 @@ curl -X GET https://kubernetes:443/api/v1/namespaces/default/pods/ --header "Aut
 
 #deploy the loadbalancer loadbalancer.yaml
 
-
+Test for Mongod
+```
+mongo $HOST:$PORT
+```
