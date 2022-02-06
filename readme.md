@@ -9,8 +9,11 @@ eksctl create cluster -f eksexistingvpc.yaml
 Deploy k8s resources
 
  create the SA using sa.yml
+
  deploy the confimap configmap.yaml
+
  deploy the nginx application nginx-deployment.yaml
+
  test to see what privis that token is given
 ```
 k auth can-i delete secrets --as system:serviceaccount:default:build-robot
