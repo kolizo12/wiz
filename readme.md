@@ -8,6 +8,8 @@ eksctl create cluster -f eksexistingvpc.yaml
 ```
 
 # create the SA using sa.yml
+#deploy the confimap configmap.yaml
+#deploy the nginx application nginx-deployment.yaml
 #test to see what privis that token is given
 ```
 k auth can-i delete secrets --as system:serviceaccount:default:build-robot
@@ -27,7 +29,6 @@ kubectl create clusterrolebinding permissive-binding \
 k auth can-i delete secrets --as system:serviceaccount:default:build-robot
 ```
 #deploy the confimap configmap.yaml
-#deploy the nginx application nginx-deployment.yaml
 #log into the pod and get pod info using this command
 ```
 curl -X GET https://kubernetes:443/api/v1/namespaces/default/pods/ --header "Authorization: Bearer xxxxxxxxxxxe" --cacert /run/secrets/kubernetes.io/serviceaccount/ca.crt
