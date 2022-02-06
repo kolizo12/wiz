@@ -17,6 +17,9 @@ spec:
       serviceAccountName: build-robot
       containers:
       - name: nginx
-        image: nginx:1.14.2
+        image: kolizo/nginxmongo:v2
+        envFrom:
+        - configMapRef:
+            name: special-config
         ports:
         - containerPort: 80
