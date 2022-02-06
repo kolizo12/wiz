@@ -1,5 +1,12 @@
 K8S 
 ===
+#create the ekscluster in public subnet using the script eksexistingvpc.yaml
+#replace every value mark with xxx with your appropriate value
+
+```
+eksctl create cluster -f eksexistingvpc.yaml
+```
+
 # create the SA using sa.yml
 #test to see what privis that token is given
 ```
