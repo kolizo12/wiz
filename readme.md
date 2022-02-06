@@ -24,7 +24,7 @@ Create a mongod instance with an attache profile that give it access to all ec2 
 ```
 aws ec2 run-instances --image-id ami-06cffe063efe892ad --instance-type t2.micro --key-name webapp --security-groups  database --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=Mongodb}]' 
 
-aws ec2 associate-iam-instance-profile --instance-id i-070afd4037ac924cf --iam-instance-profile Name=ec2instance
+aws ec2 associate-iam-instance-profile --instance-id i-xxxxxxxx --iam-instance-profile Name=ec2instance
 ```
 ===
 Create the volumes to be consumed by the mongod instance 
@@ -122,7 +122,6 @@ sudo chown mongod:mongod /log
 sudo chown mongod:mongod /journal
 ```
 ===
-
 edit the /etc/mongod.conf
 ====
 path:
