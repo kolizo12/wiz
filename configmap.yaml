@@ -1,8 +1,0 @@
-apiVersion: v1
-data:
-  HOST: ip-172-31-4-234.us-west-2.compute.internal
-  PORT: "27017"
-kind: ConfigMap
-metadata:
-  creationTimestamp: null
-  name: special-config
