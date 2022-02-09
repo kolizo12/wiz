@@ -1,8 +1,0 @@
-apiVersion: v1
-data:
-  HOST: ec2-54-191-29-238.us-west-2.compute.amazonaws.com
-  PORT: "27017"
-kind: ConfigMap
-metadata:
-  creationTimestamp: null
-  name: special-config
